@@ -12,7 +12,7 @@ import javax.inject.Qualifier;
 
 @Retention(RUNTIME)
 @Target({ TYPE, FIELD, PARAMETER })
-@Qualifier  	//×¢ÒâÓëÁíÒ»¸öStringedInstrumentµÄÇø±ğ£¬¸ÃQualifierÊ¹ÓÃÁËinject°ü
+@Qualifier  	//æ³¨æ„ä¸å¦ä¸€ä¸ªStringedInstrumentçš„åŒºåˆ«ï¼Œè¯¥Qualifierä½¿ç”¨äº†injectåŒ…
 public @interface StringedInstrument2 {
 
 }

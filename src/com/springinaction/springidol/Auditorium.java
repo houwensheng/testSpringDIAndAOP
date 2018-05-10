@@ -1,7 +1,7 @@
 package com.springinaction.springidol;
 
 /**
- * 表演大厅，需要在开始前开灯，在表演结束时关灯
+ * 琛ㄦ紨澶у巺锛岄渶瑕佸湪寮�濮嬪墠寮�鐏紝鍦ㄨ〃婕旂粨鏉熸椂鍏崇伅
  * @author HR
  *
  */

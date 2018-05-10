@@ -22,35 +22,35 @@ public class OneManBand implements Performer {
 	 */
 	@Override
 	public void perform() throws PerformanceException {
-		//通过list或者set装配
+		//閫氳繃list鎴栬�卻et瑁呴厤
 //		for(Instrument instrument:instruments) {
 //			instrument.play();
 //		}
 		
-		//通过map装配
+		//閫氳繃map瑁呴厤
 //		for(String key:instruments.keySet()) {
 //			System.out.print(key + " : ");
 //			Instrument instrument = instruments.get(key);
 //			instrument.play();
 //		}
 		
-		//通过properties装配
+		//閫氳繃properties瑁呴厤
 		for(Object key:instruments.keySet()) {
 			System.out.println(key + " : " + instruments.getProperty((String) key));
 		}
 
 	}
 	
-	/**通过list或者set装配
+	/**閫氳繃list鎴栬�卻et瑁呴厤
 	private Collection<Instrument> instruments;
 
-	//注入instruments集合
+	//娉ㄥ叆instruments闆嗗悎
 	public void setInstruments(Collection<Instrument> instruments) {
 		this.instruments = instruments;
 	}
 	*/
 	
-	/**通过map装配
+	/**通閫氳繃map瑁呴厤
 	 * 
 	private Map<String,Instrument> instruments;
 

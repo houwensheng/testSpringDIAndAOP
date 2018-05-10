@@ -11,14 +11,14 @@ public class Magician implements MindReader {
 	
 	private String thoughts;
 	
-	//声明参数化的切点
+	//澹版槑鍙傛暟鍖栫殑鍒囩偣
 	@Pointcut("execution(* com.springinaction.springidol.Thinker.thinkOfSomeThing(String)) && args(thoughts)")
 	public void thinking(String thoughts) {
 		
 	}
 	
 	@Override
-	@Before("thinking(thoughts)")	//把参数传递给通知
+	@Before("thinking(thoughts)")	//鎶婂弬鏁颁紶閫掔粰閫氱煡
 	public void interceptThoughts(String thoughts) {
 		System.out.println("Intercepting volunteer's thoughts : " + thoughts);
 		this.thoughts = thoughts;

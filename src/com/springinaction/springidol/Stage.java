@@ -5,15 +5,15 @@ package com.springinaction.springidol;
 
 /**
  * @author HR
- * Ö»ÓĞÒ»¸öÎèÌ¨£¬Õû³Éµ¥Àı
+ * åªæœ‰ä¸€ä¸ªèˆå°ï¼Œæ•´æˆå•ä¾‹
  */
 public class Stage {
-	//Ã»ÓĞ¹«¿ªµÄ¹¹Ôì·½·¨
+	//æ²¡æœ‰å…¬å¼€çš„æ„é€ æ–¹æ³•
 	private Stage() {
 		
 	}
 	
-	//ÑÓ³Ù¼ÓÔØÊµÀı
+	//å»¶è¿ŸåŠ è½½å®ä¾‹
 	private static class StageSingletonHolder{
 		static Stage instance = new Stage();
 	}

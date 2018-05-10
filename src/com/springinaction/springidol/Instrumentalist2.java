@@ -2,7 +2,7 @@ package com.springinaction.springidol;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.inject.Inject;//JAVA EEÖĞ²ÅÓĞÕâ¸ö°ü£¬ÆäËû°æ±¾µÃ×Ô¼ºÏÂ¸öjar°ü»òÕßÊ¹ÓÃmaven
+import javax.inject.Inject;//JAVA EEä¸­æ‰æœ‰è¿™ä¸ªåŒ…ï¼Œå…¶ä»–ç‰ˆæœ¬å¾—è‡ªå·±ä¸‹ä¸ªjaråŒ…æˆ–è€…ä½¿ç”¨maven
 import javax.inject.Named;
 import javax.inject.Provider;
 
@@ -32,7 +32,7 @@ public class Instrumentalist2 implements Performer {
 		}
 	}
 	
-	@Value("#{systemEnvironment['OS']}")	//Ê¹ÓÃ@ValueÊ±£¬¿ÉÒÔÍ¨¹ıSpEL±í´ïÊ½×°ÅäÖµ
+	@Value("#{systemEnvironment['OS']}")	//ä½¿ç”¨@Valueæ—¶ï¼Œå¯ä»¥é€šè¿‡SpELè¡¨è¾¾å¼è£…é…å€¼
 	private String song;
 	
 	private Set<Instrument> instruments;

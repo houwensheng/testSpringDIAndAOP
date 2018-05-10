@@ -4,15 +4,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * »ùÓÚJAVAµÄÅäÖÃÓë±ğµÄÀàÖĞ×¢½âÅäÖÃ²¢²»Í¨ÓÃ
- * ±ÈÈçÔÚ±ğµÄÀàÖĞÍ¨¹ı×¢½âÉùÃ÷µÄbean£¬ÔÚÕâÀï²¢²»ÄÜÖ±½ÓÊ¹ÓÃ
+ * åŸºäºJAVAçš„é…ç½®ä¸åˆ«çš„ç±»ä¸­æ³¨è§£é…ç½®å¹¶ä¸é€šç”¨
+ * æ¯”å¦‚åœ¨åˆ«çš„ç±»ä¸­é€šè¿‡æ³¨è§£å£°æ˜çš„beanï¼Œåœ¨è¿™é‡Œå¹¶ä¸èƒ½ç›´æ¥ä½¿ç”¨
  * @author HR
  *
  */
-@Configuration	//¸æÖªSpring£¬Õâ¸öÀà½«°üº¬Ò»¸ö»ò¶à¸öbeanµÄ¶¨Òå
+@Configuration	//å‘ŠçŸ¥Springï¼Œè¿™ä¸ªç±»å°†åŒ…å«ä¸€ä¸ªæˆ–å¤šä¸ªbeançš„å®šä¹‰
 public class SpringIdolConfig {
 
-	@Bean	//·½·¨Ãû½«×÷Îª¸ÃbeanµÄID
+	@Bean	//æ–¹æ³•åå°†ä½œä¸ºè¯¥beançš„ID
 	public Performer duke() {
 		return new Juggler(15);
 	}
@@ -24,7 +24,7 @@ public class SpringIdolConfig {
 	
 	@Bean
 	public Performer poeticDuck() {
-		//ÒıÓÃsonnet29Ê±£¬Spring»áÀ¹½Ø¸Ã·½·¨µÄµ÷ÓÃ
+		//å¼•ç”¨sonnet29æ—¶ï¼ŒSpringä¼šæ‹¦æˆªè¯¥æ–¹æ³•çš„è°ƒç”¨
 		return new PoeticJuggler(sonnet29());
 	}
 }

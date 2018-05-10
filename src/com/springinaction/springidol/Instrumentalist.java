@@ -28,7 +28,7 @@ public class Instrumentalist implements Performer {
 	}
 	
 	private String song;
-	@StringedInstrument //使用自定义的注解，只能用在属性上，不能用在方法上
+	@StringedInstrument //浣跨敤鑷畾涔夌殑娉ㄨВ锛屽彧鑳界敤鍦ㄥ睘鎬т笂锛屼笉鑳界敤鍦ㄦ柟娉曚笂
 	private Instrument instrument;
 	
 	public String getSong() {
@@ -43,8 +43,8 @@ public class Instrumentalist implements Performer {
 //	}
 	
 	//@Autowired
-	//@Qualifier("guitar")	//限定自动装配的bean名称为guitar
-	//@Qualifier("stringed")//限定自动装配的bean的qualifier属性为stringed
+	//@Qualifier("guitar")	//闄愬畾鑷姩瑁呴厤鐨刡ean鍚嶇О涓篻uitar
+	//@Qualifier("stringed")//闄愬畾鑷姩瑁呴厤鐨刡ean鐨剄ualifier灞炴�т负stringed
 	public void setInstrument(Instrument instrument) {
 		this.instrument = instrument;
 	}

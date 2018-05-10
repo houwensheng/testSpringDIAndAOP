@@ -24,7 +24,7 @@ public class StartSpringIdol {
 		//Performer performer = (Performer) ctx.getBean("poeticDuke");
 		Performer performer = (Performer) ctx.getBean("poeticDuck");
 		Thinker thinker = (Thinker) ctx.getBean("volunteer");
-		//Ïú»Ù·½·¨Ã»ÓĞÖ´ĞĞ
+		//é”€æ¯æ–¹æ³•æ²¡æœ‰æ‰§è¡Œ
 		//Auditorium auditorium = (Auditorium) ctx.getBean("auditorium");
 		try {
 			performer.perform();

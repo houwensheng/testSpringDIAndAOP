@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import com.springinaction.springidol.qualifiers.StringedInstrument;
 
 @StringedInstrument
-@Component	//Bean的ID默认为无限定类名，此处为guitar
+@Component	//Bean鐨処D榛樿涓烘棤闄愬畾绫诲悕锛屾澶勪负guitar
 public class Guitar implements Instrument {
 
 	@Override

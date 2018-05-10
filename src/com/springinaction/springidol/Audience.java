@@ -18,25 +18,25 @@ public class Audience {
 		
 	}
 
-	//表演之前
+	//琛ㄦ紨涔嬪墠
 	@Before("performance()")
 	public void takeSeats() {
 		System.out.println("The audience is taking their seats.");
 	}
 	
-	//表演之前
+	//琛ㄦ紨涔嬪墠
 	@Before("performance()")
 	public void turnOffCellPhones() {
 		System.out.println("The audience is turning off their cellphones.");
 	}
 	
-	//表演之后
+	//琛ㄦ紨涔嬪悗
 	@AfterReturning("performance()")
 	public void applaud() {
 		System.out.println("clap clap clap clap");
 	}
 	
-	//表演失败之后
+	//琛ㄦ紨澶辫触涔嬪悗
 	@AfterThrowing("performance()")
 	public void demandRefund() {
 		System.out.println("Boo! We want our money back!");

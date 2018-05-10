@@ -5,7 +5,7 @@ import org.aspectj.lang.annotation.DeclareParents;
 import org.springframework.stereotype.Component;
 
 /**
- * 通过标注引入
+ * 閫氳繃鏍囨敞寮曞叆
  * @author HR
  *
  */
