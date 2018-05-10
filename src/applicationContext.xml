@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   						  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- p命名空间用来代替property属性 -->
+	<!-- constructor-arg 通过构造参数来注入值 -->
+	<bean id="poeticDuke" class="com.springinaction.springidol.PoeticJuggler" >
+		<constructor-arg value="15"></constructor-arg>
+		<constructor-arg ref="sonnet29"></constructor-arg>
+	</bean>
+	
+	<bean id="theStage" class="com.springinaction.springidol.Stage" factory-method="getInstance" />
+	
+	<bean id="sonnet29" class="com.springinaction.springidol.Sonnet29"/>
+	
+	<!-- use prototype to get a new bean every time -->
+	<bean id="ticket" class="com.springinaction.springidol.Ticket" scope="prototype" />
+	
+	<bean id="auditorium" class="com.springinaction.springidol.Auditorium"
+		init-method="turnOnLights"
+		destroy-method="turnOffLights" />
+	
+	<bean id="saxophone" class="com.springinaction.springidol.Saxophone"/>
+	<bean id="guitar" class="com.springinaction.springidol.Guitar"/>
+	<bean id="cymbal" class="com.springinaction.springidol.Cymbal"/>
+	
+	
+	
+	<!-- property 元素通过调用属性的setter方法来注入值 -->
+	<bean id="kenny" class="com.springinaction.springidol.Instrumentalist">
+		<property name="song" value="Jingle Bells" />
+		<property name="instrument" ref="saxophone" />
+		<!-- 内部bean，没有ID属性，不能被复用，仅适用于一次注入，不能被其他bean引用 -->
+		<!-- property name="instrument">
+			<bean class="com.springinaction.springidol.Saxophone" />
+		</property -->
+	</bean>
+	
+	<bean id="carl" class="com.springinaction.springidol.Instrumentalist"
+		p:song="#{kennyP.selectSong(kennyP.song)?.toUpperCase()}" 
+		p:instrument-ref="saxophone" />
+	
+	<!-- 使用命名空间p的kenny bean -->
+	<bean id="kennyP" class="com.springinaction.springidol.Instrumentalist"
+		p:song="Jingle Bells" 
+		p:instrument-ref="saxophone" />
+	
+	<!-- 无论list还是set都可以用来装配类型为java.util.Collection的任意实现或者数组的属性 -->
+<!-- <bean id="hank" class="com.springinaction.springidol.OneManBand">
+		<property name="instruments">
+			<list>
+				<ref bean="saxophone" />
+				<ref bean="guitar" />
+				<ref bean="guitar" />
+			</list>
+		</property>
+	</bean>
+ -->	
+	<!-- 当set中元素重复时，会变成一个 -->	
+<!-- 	<bean id="hankset" class="com.springinaction.springidol.OneManBand">
+		<property name="instruments">
+			<set>
+				<ref bean="saxophone" />
+				<ref bean="guitar" />
+				<ref bean="guitar" />
+			</set>
+		</property>
+	</bean>
+-->
+<!--- 
+	<bean id="hankmap" class="com.springinaction.springidol.OneManBand">
+		<property name="instruments">
+			<map>
+				<entry key="SAXOPHONE" value-ref="saxophone" />
+				<entry key="GUITAR" value-ref="guitar" />
+				<entry key="GUITAR" value-ref="cymbal" />
+			</map>
+		</property>
+	</bean>
+-->	
+	<bean id="hankprop" class="com.springinaction.springidol.OneManBand">
+		<property name="instruments">
+			<props>
+				<prop key="SAXOPHONE">SAXOPHONE SAXOPHONE SAXOPHONE</prop>
+				<prop key="GUITAR">GUITAR GUITAR GUITAR</prop>
+				<prop key="GUITAR">aaa</prop> <!-- 会把上面的GUITAR覆盖 -->
+			</props>
+		</property>
+	</bean>
+	
+</beans>

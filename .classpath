@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="G:/mygame/library/Spring/lib/spring5.0.5-dist/spring-aop-5.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="G:/mygame/library/Spring/lib/spring5.0.5-dist/spring-aspects-5.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="G:/mygame/library/Spring/lib/spring5.0.5-dist/spring-beans-5.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="G:/mygame/library/Spring/lib/spring5.0.5-dist/spring-context-5.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="G:/mygame/library/Spring/lib/spring5.0.5-dist/spring-core-5.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="G:/mygame/library/Spring/lib/spring5.0.5-dist/spring-expression-5.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="G:/mygame/library/Spring/lib/spring5.0.5-dist/spring-test-5.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="G:/mygame/library/logging/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="G:/mygame/library/javax.inject-2.5.0-b61.jar"/>
+	<classpathentry kind="lib" path="G:/mygame/library/com.springsource.org.aspectj.weaver-1.7.2.RELEASE.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

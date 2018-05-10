@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	   			http://www.springframework.org/schema/context
+	   			http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	   			http://www.springframework.org/schema/aop
+	   			http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	   			
+	<!-- Spring自动检测，使用这个时，需要删掉自动装配 -->
+	<context:component-scan base-package="com.springinaction.springidol">
+		<context:include-filter type="assignable" expression="com.springinaction.springidol.Instrument"/>
+	</context:component-scan>
+
+	<!--  bean id="audience" class="com.springinaction.springidol.Audience" /> -->
+	
+<!--  	<aop:config>
+		<aop:aspect ref="audience">
+			<aop:before pointcut="execution(* com.springinaction.springidol.Performer.perform(..))" method="takeSeats" />
+			<aop:before pointcut="execution(* com.springinaction.springidol.Performer.perform(..))" method="turnOffCellPhones"/>
+			<aop:after-returning pointcut="execution(* com.springinaction.springidol.Performer.perform(..))" method="applaud"/>
+			<aop:after-throwing pointcut="execution(* com.springinaction.springidol.Performer.perform(..))" method="demandRefund"/>
+		</aop:aspect>
+	</aop:config>-->
+	
+	<!-- 通过定义aop:pointcut命名切点，避免了DRY（不要重复你自己） -->
+  	<!--  aop:config>
+		<aop:aspect ref="audience">
+			<aop:pointcut expression="execution(* com.springinaction.springidol.Performer.perform(..))" id="performance"/>
+			<aop:before pointcut-ref="performance" method="takeSeats" />
+			<aop:before pointcut-ref="performance" method="turnOffCellPhones"/>
+			<aop:after-returning pointcut-ref="performance" method="applaud"/>
+			<aop:after-throwing pointcut-ref="performance" method="demandRefund"/>
+		</aop:aspect>
+	</aop:config>-->
+	
+	<bean id="volunteer" class="com.springinaction.springidol.Volunteer">
+		<property name="thoughts" value="666666"></property>
+	</bean>
+	
+	<aop:config>
+		<aop:aspect ref="audience">
+			<aop:pointcut expression="execution(* com.springinaction.springidol.Performer.perform(..))" id="performance"/>
+			<aop:around pointcut-ref="performance" method="watchPerformance" />
+		</aop:aspect>
+		<aop:aspect>
+			<aop:declare-parents types-matching="com.springinaction.springidol.Performer+" 
+				implement-interface="com.springinaction.springidol.Contestant"
+				default-impl="com.springinaction.springidol.GraciousContestant"/>
+		</aop:aspect>
+	</aop:config>
+	
+	<aop:config>
+		<aop:aspect ref="magician">
+			<aop:pointcut expression="execution(* com.springinaction.springidol.Thinker.thinkOfSomeThing(String)) and args(thoughts)" id="thinking"/>
+			<aop:before pointcut-ref="thinking" method="interceptThoughts" arg-names="thoughts"/>
+		</aop:aspect>
+	</aop:config>
+</beans>	   						  
